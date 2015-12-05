@@ -465,7 +465,110 @@ durch eine elektrische Entladung zum Leuchten angeregt. Durch ein optisches
 Gitter wird das Licht in seine spektralen Bestandteile zerlegt und nur der
 interessante Bereich durchgelassen (Gittermonochromator).
 
+\subsection{Auswertung}
 
+\subsubsection{Aufgabe 1}
+
+Wir haben die Wellenlängen anhand des Gittermonochromators abgelesen. Durch
+Abgleich mit der NIST Atomic Spectra Database (Abfrage für Hg I, Minium
+Relative Strength: 500) haben wir die folgenden Termschemata erhalten.
+
+\begin{tabular}{l|l|l}
+  Wellenlänge & Tatsächliche Wellenlänge(n) & Übergang \\
+  \hline
+  579 nm & 576{,}9610 nm und 579{,}0670 nm & $6^3D_2 \to 6^1P_1$ und $6^3D_1 \to 6^1P_1$ \\
+  550 nm & 546{,}0750 nm                   & $7^3S_1 \to 6^3P_2$ \\
+  436 nm & 435{,}8335 nm                   & $7^3S_1 \to 6^3P_1$ \\
+  408 nm & 404{,}6565 nm                   & $7^3S_1 \to 6^3P_0$ \\
+  377 nm & unbekannt & siehe Text
+\end{tabular}
+\vspace{22pt}
+
+Bei der bei 579 nm gefundenen Linie handelt es sich um eine Doppellinie.
+
+Die Linie bei 377 nm war nicht eindeutig zuzuordnen. Die stärkste Linie, die
+sich in dieser Umgebung befindet, ist der Übergang $8^2D_{3/2} \to 7^2P_{1/2}$
+des Hg II. Aufgrund der geringen Messgenauigkeit und der geringen
+Wahrscheinlichkeit, dass Quecksilber zweifach ionisiert ist (denn sonst würde
+man noch andere stärkere Linien sehen), können wir dies nicht gesichert
+feststellen.
+
+\subsubsection{Aufgabe 2}
+
+Das Ringsystem war eindeutig sichtbar. Exemplarisch zeigen wir hier das Ringsystem der XYZ-Linie
+
+[Bild]
+
+Es gelang uns nicht, die beiden gelben Linien mit dem Gittermonochromator zu
+trennen.
+
+\subsubsection{Aufgabe 3}
+
+Eine Justierung führte zu einer verbesserten Schärfe.
+
+\subsubsection{Aufgabe 4}
+
+Wir betrachten Gleichung \ref{eq:ord}. Betrachten wir den Ring $0$-ter Ordnung
+und den Ring $i$-ter Ordnung und bilden die Differenz der Gleichungen, erhalten
+wir
+
+\begin{equation}
+  z_i - z_0 = \frac{2d}{\lambda} \frac{1}{2f^2} (r_i^2 + r_0^2)
+\end{equation}
+
+Durch Umstellen und Nutzung von $i = z_0 - z_i$ ergibt sich die Fitgleichung
+\begin{equation}
+  r_i^2 = i \frac{\lambda f^2}{d} - r_0^2
+\end{equation}
+
+Die gemessene Kurve fitten wir durch Benutzung des Tools Peak-o-mat, um die
+Durchmesser (in CCD-Pixeln) abzulesen. Die Fehler ergeben sich durch FWHM.
+
+\begin{tabular}{l|l|l}
+  Index $i$ & Durchmesser $r_i$  & Fehler $\Delta r_i$ \\
+  \hline
+  -1 & $62$ & $16$ \\
+  0 & $295$ & $87$ \\
+  1 & $530$ & $18$ \\
+  2 & $631$ & $17$ \\
+  3 & $710$ & $12$ \\
+  4 & $775$ & $11$ \\
+  5 & $833$ & $11$ \\
+  6 & $885$ & $10$ \\
+  7 & $932$ & $9$  \\
+  8 & $976$ & $9$  \\
+  9 & $1018$ & $9$ \\
+\end{tabular}
+
+Durch Subtraktion des Nullpunkts bei $x=295$ und quadratische Auftragung von
+$r_i^2$ gegen $i$ erhalten wir die Steigung (siehe Plot 2). Die Umrechnung in
+SI-Einheiten erfolgte durch Multiplikation mit $(4{,}65 \mu\text{m}/\text{px})^2$
+
+\begin{equation}
+  \frac{\lambda f^2}{d} = \num{579000+-120} \text{px}^2 = \num{1.2520+-0.0026} \text{mm}^2
+\end{equation}
+
+Mit der Wellenlänge $\lambda = 546{,}0750 \text{nm}$ und dem Plattenabstand $d
+= \num{2.442+-0.002}$ ergibt sich durch Gaußsche Fehlerrechnung unter
+Vernachlässigung von $\Delta \lambda$
+
+\begin{equation}
+  f = \num{73.228+-0.08} \text{mm}
+\end{equation}
+
+
+
+
+
+\invisiblesection{Plots}
+
+\begin{landscape}
+  \input{plot-1.tex}
+\end{landscape}
+
+\begin{landscape}
+  \input{plot-2.tex}
+\end{landscape}
 
 
 \end{document}
