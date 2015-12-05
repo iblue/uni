@@ -1,0 +1,111 @@
+% GNUPLOT: LaTeX picture with Postscript
+\begingroup
+  \makeatletter
+  \providecommand\color[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package color not loaded in conjunction with
+      terminal option `colourtext'%
+    }{See the gnuplot documentation for explanation.%
+    }{Either use 'blacktext' in gnuplot or load the package
+      color.sty in LaTeX.}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\includegraphics[2][]{%
+    \GenericError{(gnuplot) \space\space\space\@spaces}{%
+      Package graphicx or graphics not loaded%
+    }{See the gnuplot documentation for explanation.%
+    }{The gnuplot epslatex terminal needs graphicx.sty or graphics.sty.}%
+    \renewcommand\includegraphics[2][]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \@ifundefined{ifGPcolor}{%
+    \newif\ifGPcolor
+    \GPcolorfalse
+  }{}%
+  \@ifundefined{ifGPblacktext}{%
+    \newif\ifGPblacktext
+    \GPblacktexttrue
+  }{}%
+  % define a \g@addto@macro without @ in the name:
+  \let\gplgaddtomacro\g@addto@macro
+  % define empty templates for all commands taking text:
+  \gdef\gplbacktext{}%
+  \gdef\gplfronttext{}%
+  \makeatother
+  \ifGPblacktext
+    % no textcolor at all
+    \def\colorrgb#1{}%
+    \def\colorgray#1{}%
+  \else
+    % gray or color?
+    \ifGPcolor
+      \def\colorrgb#1{\color[rgb]{#1}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color[rgb]{1,0,0}}%
+      \expandafter\def\csname LT1\endcsname{\color[rgb]{0,1,0}}%
+      \expandafter\def\csname LT2\endcsname{\color[rgb]{0,0,1}}%
+      \expandafter\def\csname LT3\endcsname{\color[rgb]{1,0,1}}%
+      \expandafter\def\csname LT4\endcsname{\color[rgb]{0,1,1}}%
+      \expandafter\def\csname LT5\endcsname{\color[rgb]{1,1,0}}%
+      \expandafter\def\csname LT6\endcsname{\color[rgb]{0,0,0}}%
+      \expandafter\def\csname LT7\endcsname{\color[rgb]{1,0.3,0}}%
+      \expandafter\def\csname LT8\endcsname{\color[rgb]{0.5,0.5,0.5}}%
+    \else
+      % gray
+      \def\colorrgb#1{\color{black}}%
+      \def\colorgray#1{\color[gray]{#1}}%
+      \expandafter\def\csname LTw\endcsname{\color{white}}%
+      \expandafter\def\csname LTb\endcsname{\color{black}}%
+      \expandafter\def\csname LTa\endcsname{\color{black}}%
+      \expandafter\def\csname LT0\endcsname{\color{black}}%
+      \expandafter\def\csname LT1\endcsname{\color{black}}%
+      \expandafter\def\csname LT2\endcsname{\color{black}}%
+      \expandafter\def\csname LT3\endcsname{\color{black}}%
+      \expandafter\def\csname LT4\endcsname{\color{black}}%
+      \expandafter\def\csname LT5\endcsname{\color{black}}%
+      \expandafter\def\csname LT6\endcsname{\color{black}}%
+      \expandafter\def\csname LT7\endcsname{\color{black}}%
+      \expandafter\def\csname LT8\endcsname{\color{black}}%
+    \fi
+  \fi
+  \setlength{\unitlength}{0.0500bp}%
+  \begin{picture}(15306.00,10204.00)%
+    \gplgaddtomacro\gplbacktext{%
+      \csname LTb\endcsname%
+      \put(814,704){\makebox(0,0)[r]{\strut{} 9}}%
+      \put(814,1628){\makebox(0,0)[r]{\strut{} 10}}%
+      \put(814,2551){\makebox(0,0)[r]{\strut{} 11}}%
+      \put(814,3475){\makebox(0,0)[r]{\strut{} 12}}%
+      \put(814,4398){\makebox(0,0)[r]{\strut{} 13}}%
+      \put(814,5322){\makebox(0,0)[r]{\strut{} 14}}%
+      \put(814,6245){\makebox(0,0)[r]{\strut{} 15}}%
+      \put(814,7169){\makebox(0,0)[r]{\strut{} 16}}%
+      \put(814,8092){\makebox(0,0)[r]{\strut{} 17}}%
+      \put(814,9016){\makebox(0,0)[r]{\strut{} 18}}%
+      \put(814,9939){\makebox(0,0)[r]{\strut{} 19}}%
+      \put(946,484){\makebox(0,0){\strut{} 0.45}}%
+      \put(2497,484){\makebox(0,0){\strut{} 0.5}}%
+      \put(4049,484){\makebox(0,0){\strut{} 0.55}}%
+      \put(5600,484){\makebox(0,0){\strut{} 0.6}}%
+      \put(7152,484){\makebox(0,0){\strut{} 0.65}}%
+      \put(8703,484){\makebox(0,0){\strut{} 0.7}}%
+      \put(10255,484){\makebox(0,0){\strut{} 0.75}}%
+      \put(11806,484){\makebox(0,0){\strut{} 0.8}}%
+      \put(13358,484){\makebox(0,0){\strut{} 0.85}}%
+      \put(14909,484){\makebox(0,0){\strut{} 0.9}}%
+      \put(176,5321){\rotatebox{-270}{\makebox(0,0){\strut{}Frequenzaufspaltung $\Delta \nu$ [GHz]}}}%
+      \put(7927,154){\makebox(0,0){\strut{}Magnetfeld $B$ [T]}}%
+      \put(1923,9016){\makebox(0,0)[l]{\strut{}Frequenzaufspaltung (Aufgabe 5.10 und 5.11)}}%
+      \put(1923,8796){\makebox(0,0)[l]{\strut{}Fitgleichung: $A(x) = m x$}}%
+      \put(1923,8576){\makebox(0,0)[l]{\strut{}$m = \num{19.479+-0.199}$}}%
+    }%
+    \gplgaddtomacro\gplfronttext{%
+    }%
+    \gplbacktext
+    \put(0,0){\includegraphics{plot-3}}%
+    \gplfronttext
+  \end{picture}%
+\endgroup

@@ -465,9 +465,16 @@ durch eine elektrische Entladung zum Leuchten angeregt. Durch ein optisches
 Gitter wird das Licht in seine spektralen Bestandteile zerlegt und nur der
 interessante Bereich durchgelassen (Gittermonochromator).
 
-\subsection{Auswertung}
+Das verwendete Gitter ist dabei ein Blazegitter. Blazegitter sind Gitter, die
+anstelle einer regelmäßigen Struktur aus reflektierenden und nicht
+reflektierenden Abschitten aus einer regelmäßigen Sägezahnstruktur bestehen.
+Der Winkel des Sägezahns wird dabei so gewählt, dass ein am Gitter gebeugter
+und an einer Stufe ablenkter Strahl genau in die gleiche Richtung laufen. Somit
+wird die Beugungseffizienz erhöht.
 
-\subsubsection{Aufgabe 1}
+\section{Auswertung}
+
+\subsection{Aufgabe 1}
 
 Wir haben die Wellenlängen anhand des Gittermonochromators abgelesen. Durch
 Abgleich mit der NIST Atomic Spectra Database (Abfrage für Hg I, Minium
@@ -493,20 +500,23 @@ Wahrscheinlichkeit, dass Quecksilber zweifach ionisiert ist (denn sonst würde
 man noch andere stärkere Linien sehen), können wir dies nicht gesichert
 feststellen.
 
-\subsubsection{Aufgabe 2}
+\subsection{Aufgabe 2}
 
-Das Ringsystem war eindeutig sichtbar. Exemplarisch zeigen wir hier das Ringsystem der XYZ-Linie
+Das Ringsystem war eindeutig sichtbar. Exemplarisch zeigen wir hier das
+Ringsystem der grünen Linie.
 
-[Bild]
+\vspace{22pt}
+
+\includegraphics[width=0.7\textwidth]{justiert.png}
 
 Es gelang uns nicht, die beiden gelben Linien mit dem Gittermonochromator zu
 trennen.
 
-\subsubsection{Aufgabe 3}
+\subsection{Aufgabe 3}
 
 Eine Justierung führte zu einer verbesserten Schärfe.
 
-\subsubsection{Aufgabe 4}
+\subsection{Aufgabe 4}
 
 Wir betrachten Gleichung \ref{eq:ord}. Betrachten wir den Ring $0$-ter Ordnung
 und den Ring $i$-ter Ordnung und bilden die Differenz der Gleichungen, erhalten
@@ -556,9 +566,107 @@ Vernachlässigung von $\Delta \lambda$
   f = \num{73.228+-0.08} \text{mm}
 \end{equation}
 
+\subsection{Aufgabe 5}
 
+Wir sehen 3 Linien. Die mittlere Linie ist linear polarisiert, die beiden
+äußeren zirkulär.
 
+Die 546 nm Linie entspricht dem Übergang $7^3S_1 \to 6^3P_2$. Der
+Ausgangszustand spaltet wegen $J=1$ in die 3 Zustände $m_j = 0,\pm1$ auf, der
+Endzustand wegen $J=2$ in die Zustände $m_j = 0,\pm1,\pm2$.
 
+Da nur die Übergange $\Delta m_j = 0,\pm1$ erlaubt sind und die $\Delta E$ der
+Aufspaltung linear sind, erwarten wir jeweils 3 Linien mit den gleichen
+Energien. Nämlich die Übergänge $\Delta m_j = 1$ mit $1 \to 2, 0 \to 1, -1 \to
+0$ (linkszirkulär), $\Delta m_j = 0$ mit $1 \to 1, 0 \to 0, -1 \to -1$ (linear)
+und $\Delta m_j = -1$ mit $1 \to 0, 0 \to -1, -1 \to -2$. Dies entspricht genau
+der Beobachtung.
+
+\subsection{Aufgabe 6}
+Haben wir vermessen.
+
+\subsection{Aufgabe 7}
+Da es nicht möglich war, die Linien zu separieren, können wir diese Aufgabe
+nicht mit experimentellen Daten unterlegen, weswegen eine Auswertung nicht
+sinnvoll erscheint.
+
+\subsection{Aufgabe 8}
+Selbst bei einen Spulenstrom von 20 A war es nicht möglich, Peaks im Rauschen
+zu erkennen. Eine Vermessung war daher nicht möglich.
+
+\subsection{Aufgabe 9}
+
+Widerrum ausgehend von Gleichung $\ref{eq:ord}$ erhalten wir bei den gleichen
+Beugungsordnungen $z$ bei einer Wellenlängendifferenz $\delta \lambda$ und den
+Ringdurchmessern $r$ und $r'$
+
+\begin{equation}
+  \frac{2 d}{\lambda} \left(1 - \frac{r^2}{2f^2}\right) =
+  \frac{2 d}{\lambda + \Delta \lambda} \left(1 - \frac{r'^2}{2f^2}\right)
+\end{equation}
+
+Daraus folgt
+\begin{equation}
+  \Delta \lambda = \frac{\lambda(r^2 - r'^2)}{2f^2} \frac{1}{1 - \frac{r^2}{2f^2}}
+\end{equation}
+
+Mit der Näherung $r \ll f$ folgt
+\begin{equation}
+  \Delta \lambda = \frac{\lambda(r^2 - r'^2)}{2f^2}
+\end{equation}
+
+Für die Frequenzaufspaltung folgt dann
+\begin{align*}
+  \Delta \nu &= \frac{c}{\lambda} - \frac{c}{\lambda + \Delta \lambda} \\
+             &= \frac{c(\lambda + \Delta \lambda) - c\lambda}{(\lambda + \Delta \lambda) \lambda} \\
+             &= \frac{c \Delta \lambda}{(\delta + \Delta \lambda)\lambda} \\
+             &\approx \frac{c \Delta \lambda}{\lambda^2}
+\end{align*}
+
+\subsection{Aufgabe 5.10 und 5.11}
+
+Analog zu Aufgabe 5.4 haben wir mittels Peak-o-mat die Position der
+entsprechenden Peaks bestimmt. Die entstandenen Daten haben wir mittels Libre
+Office Spreadsheet ausgewertet. Die Messfehler ergeben sich aus der Streuung.
+Das Ergebnis ist in Plot 3 aufgetragen.
+
+Die Fitgleichung ist gerade
+
+\begin{equation}
+  \nu = B \frac{g_j \mu_B}{h}
+\end{equation}
+
+Aus den Plot ergibt sich
+\begin{equation}
+  \frac{g_j 2 \mu_B}{h} = \num{19.5+-0.2} \text{GHz}/\text{T}
+\end{equation}
+
+Daraus ergibt sich
+\begin{equation}
+  g_j = \num{1.39+-0.02}
+\end{equation}
+
+Theoretisch ergibt sich für den $3P_2$-Zustand gerade
+\begin{equation}
+  g_j = 1.3958\overline{3}
+\end{equation}
+
+Unser Wert ist also identisch mit diesem. Die beobachte Polarisation ist
+ebenfalls identisch mit dem theoretischen Modell.
+
+\section{Diskussion}
+
+Aufgrund der geringen Sensibilität der CCD-Kamera für gelbes Licht, war es es
+nicht möglich, Messungen an der gelben Linie anzustellen. Dies war
+möglicherweise auch durch das im Raum vorhandene Restlicht, dass durch zwei
+andere Arbeitsgruppen erzeugt wurde, bedingt.
+
+Die genaue Herkunft der 377 nm Linie von Quecksilber konnten wir ebenfalls
+nicht erklären. Wäre die Kamera in diesem Bereich sensitiv gewesen, hätten wir
+vielleicht nähere Untersuchungen daran anstellen können.
+
+Da wird den Lande-Faktor gut bestimmen konnten, haben wir dennoch das Hauptziel
+dieses Versuchs erreicht.
 
 \invisiblesection{Plots}
 
@@ -569,6 +677,17 @@ Vernachlässigung von $\Delta \lambda$
 \begin{landscape}
   \input{plot-2.tex}
 \end{landscape}
+
+\begin{landscape}
+  \input{plot-3.tex}
+\end{landscape}
+
+
+\invisiblesection{Messprotokoll}
+\includepdf[pages=-]{messprotokoll.pdf}
+
+\invisiblesection{Messdaten}
+\includepdf[pages=-]{data.pdf}
 
 
 \end{document}
