@@ -23,6 +23,7 @@
 \usepackage{pst-pdf}
 \usepackage{pstricks-add}
 \usepackage[numbers]{natbib}
+\usepackage{url}
 % Number only referenced equations
 %\mathtoolsset{showonlyrefs}
 
@@ -86,7 +87,7 @@
 \begin{figure}[h!]
   \centering
   \includegraphics[width=1.0 \textwidth]{pic2.png}
-  \caption{Lösung der Schrödingergleichung an einer Potentialstufe. Grafik: Tobias Krähling}
+  \caption{Lösung der Schrödingergleichung an einer Potentialstufe.\citep{pic2}}
 \end{figure}
 
 Gegeben sei ein Teilchen und eine Potentialstufe. Ist diese Potentialstufe
@@ -139,6 +140,61 @@ Dabei ist $V_T$ die Tunnelspannung, $s$ der Abstand zwischen Probe und Spitze,
 $A$ eine vom Zwischenraum abhängige Konstante und $\phi$ die Austrittsarbeit
 aus der Probe an der gegebenen Stelle. Im Vakuum gilt
 $A \approx 1{,}02 \AA^{-1} \text{eV}^{-1/2}$ nach \citep{versuchsanleitung}
+
+\subsection{Piezoelektrischer Effekt}
+
+Bestimmte Kristalle erzeugen bei Streckung oder Stauchung eine elektrische
+Spannung. Dies ist dadurch erklärbar, dass sich durch die Verformung die
+Schwerpunkte der positiven und negativen Ladungen verschieben. In den
+Elementarzellen entstehen somit Dipole, die sich zu eine makroskopisch
+messbaren Spannung aufsummieren. Umgekehrt entstecht durch Anlegen einer
+Spannung eine Verformung. Dies wird im Rastertunnelmikroskop benutzt, um die
+Spitze in sehr genauen Bereichen zu bewegen (rastern)\citep{versuchsanleitung}.
+
+\subsection{Regelkreis}
+
+Um den Tunnelstrom konstant zu halten, wird die Spitze der Probe bei einer
+X-Y-Lageveränderung durch einen Regelkreis nachgeführt. Dazu wird der
+tatsächliche Wert mit dem Sollwert verglichen und die Spitze entsprechend
+bewegt.
+
+\subsection{Tunnelspektroskopie}
+
+Aus der X-Y-Spannung und der Z-Spannung erhält man durch zurückrechnen den
+dreidimensiolen Ort der Spitze. Diese fährt die Äquipotentialflächen der
+elektronischen Struktur der Probe ab, was Rückschlüsse auf die Probe erlaubt
+(Tunnelspektroskopie).
+
+\subsection{Räumliche Struktur von Festkörpern}
+
+Festkörper im physikalischen bestehen aus sich periodisch wiederholenden
+Strukturen. Das Modell geht dabei von einem unendlichen Kristall aus, der
+translationssymmetrisch ist. Verschiebt man ihn um einen Gittervektor, erhält
+man den Ausgangskristall. Festkörper lassen sich dabei gemäß ihrer
+Gittervektoren in verschiedene Kristallsysteme einordnen.
+
+Beim untersuchten Graphit handelt es sich um Lagen aus hexagonalen Kristallen.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6 \textwidth]{pic3.png}
+  \caption{Grafitschichten in zwei verschiedenen Ansichten.\citep{pic3}}
+\end{figure}
+
+\subsection{Fouriertransformation}
+
+Zur Analyse periodischer Strukturen ist die diskrete Fouriertransformation
+geeignet. Dabei wird ein Datensatz $(a_0, a_1, \dots, a_{N-1})$ aus dem Ortsraum in
+den Frequenzraum transformiert.
+
+\begin{equation}
+  \hat{a}_k = \sum_{j=0}^{N-1} \exp\del{2 \pi \text{i} \frac{jk}{N}} a_j
+\end{equation}
+
+Transformiert man das Signal so, erhält man die Frequenzkomponenten. Im
+zweidimensionalen ist dies geeignet, um die reziproken Gittervektoren zu
+erhalten.
+
 
 \addcontentsline{toc}{section}{Literatur}
 \bibliography{literatur}
