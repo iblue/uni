@@ -16,6 +16,13 @@
 \usepackage{commath} % http://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator
 \usepackage{cancel}
 \usepackage[fleqn]{mathtools}
+\usepackage{xcolor}
+\usepackage{pstricks}
+\usepackage{pst-plot}
+\usepackage{pst-math}
+\usepackage{pst-pdf}
+\usepackage{pstricks-add}
+\usepackage[numbers]{natbib}
 % Number only referenced equations
 %\mathtoolsset{showonlyrefs}
 
@@ -65,6 +72,7 @@
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\Var}{Var}
 \begin{document}
+\bibliographystyle{unsrt}
 
 \begin{titlepage}
 \input{title.tex}
@@ -74,5 +82,65 @@
 
 \section{Physikalische Grundlagen}
 \subsection{Tunneleffekt}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.0 \textwidth]{pic2.png}
+  \caption{Lösung der Schrödingergleichung an einer Potentialstufe. Grafik: Tobias Krähling}
+\end{figure}
+
+Gegeben sei ein Teilchen und eine Potentialstufe. Ist diese Potentialstufe
+größer als die kinetische Energie des Teilchens, ist es dem Teilchen in
+klassischer Betrachtung unmöglich, diese zu überwinden. In einer
+quantenmechanischen Betrachtung gilt dies nicht mehr. Das Teilchen kann den
+Potentialberg durchqueren. Man spricht veranschaulichend vom ``Tunneleffekt''.
+Dieser ergibt sich direkt aus der Lösung der stationären eindimensionalen
+Schrödingergleichung.
+
+\begin{equation}
+  \del{V - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2}} \Psi(x) = E \Psi(x)
+\end{equation}
+
+Wir betrachten ein kastenförmiges Potential.
+
+\begin{equation}
+  V(x) = \begin{cases} V_0 & \text{falls } x_1 \le x \le x_2 \\ 0 & \text{sonst} \end{cases}
+\end{equation}
+
+Wenn das Teilchen nun von $-\infty$ einläuft, erhalten wir drei verschiedene
+stetig aneinander anschließende Lösungen
+
+\begin{align*}
+  \Psi_{I}(x) &= A e^{ikx} + B e^{-ikx} \\
+  \Psi_{II}(x) &= C e^{\kappa x} + D e^{-\kappa x} \\
+  \Psi_{III} &= F e^{ikx}
+\end{align*}
+
+mit den Koeffizienten
+
+\begin{align*}
+  k &= \sqrt{\frac{2mE}{\hbar^2}} \\
+  \kappa &= \sqrt{\frac{2m (V_0 - E)}{\hbar^2}}
+\end{align*}
+
+Diese Modell lässt sich leider nur qualitativ auf das Rastertunnelmikroskop
+übertragen. Beim Rastertunnelmikroskop wird eine Spitze im Abstand von wenigen
+Angström über eine Probe gefahren. Zwischen Probe und Spitze wird eine Spannung
+angelegt, das Potential ist somit in erster Näherung linear abfallend. Auch ist
+das Problem nicht mehr als eindimensional zu betrachten. Um den Tunnelstrom
+theoretisch vorherzusagen sind umfangreichere Betrachtungen nötig, so dass wir
+hier nur das Ergebnis von \citep{hpa1982} wiedergeben wollen.
+
+\begin{equation}
+  I_{T} \propto \frac{V_T}{s} \exp \del{-A \phi^{1/2} s}
+\end{equation}
+
+Dabei ist $V_T$ die Tunnelspannung, $s$ der Abstand zwischen Probe und Spitze,
+$A$ eine vom Zwischenraum abhängige Konstante und $\phi$ die Austrittsarbeit
+aus der Probe an der gegebenen Stelle. Im Vakuum gilt
+$A \approx 1{,}02 \AA^{-1} \text{eV}^{-1/2}$ nach \citep{versuchsanleitung}
+
+\addcontentsline{toc}{section}{Literatur}
+\bibliography{literatur}
 
 \end{document}
