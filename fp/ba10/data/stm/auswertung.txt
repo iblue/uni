@@ -1,0 +1,60 @@
+HOPG__0000.f.top:
+Filter: Flatten, Local Plane
+1. Kante: 4.5+-1 -> 3.5+-1 (A)
+2. Kante: 8.5+-2 -> 5+-1 (A)
+3. Kante 16+-2 -> 10+-2 A
+
+HOPG__0001.b.top:
+Filter: Flatten, Local Plane
+5.5+-1 A -> 3+-2 A
+7+-3 A -> 2+-2 A
+20+-6 A -> 2+-6 A
+
+HOPG__0002.f.top:
+6+-2 A -> 4+-3 A
+5.5+-1.5 A -> 2.5+-1 A
+7.5+-1.5 A -> 4.5+-1 A
+
+HOPG__0003.f.top:
+
+1. 6+-1 -> 2.5+-3
+2. 7+-1 -> 3+-3
+3. 8+-1 -> 3+-3
+
+(folgende zeigen gleiches Gebiet)
+
+HOPG_0007.f.top:
+8+-1 -> 2+-2
+
+HOPG_0008.b.top:
+2+-2 -> 9+-1
+
+
+HOPG__0009.b.top:
+3+-2 A -> 9+-3 A
+
+
+HOPG__0010.f.top:
+20+-20 A -> 70+-20 A
+
+HOPG__0011.f.top:
+4+-1 A -> 2+-2 A
+
+HOPG_0012.b.top:
+5+-5 A -> 4+-6 A
+
+HOPG___00013.f.top:
+7+-7 A -> 6+->4 A
+3+-3 A -> 22+-5 A
+
+
+HOPG__0014.f.top:
+2+-1 A -> 72+-2 A
+
+HOPG__0015.b.top:
+1.5+-1 A -> 8+-1 A
+14+-2 A -> 8+-8 A
+
+(16 zeigt das selbe, nachfolgende nicht verwertbar)
+(erst Crash, dann nach 2maligen Nadelwechsel nur noch Rauschen)
+
